@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RedMode — Terms of Service</title>
     <link rel="icon" type="image/png" href="logo_redmode.png">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root{--coral:#FF6B6B;--coral-light:#FFE8E8;--bg:#FFFAF9;--text-primary:#1A1A2E;--text-secondary:#6B7280;--text-tertiary:#9CA3AF;--gradient-coral:linear-gradient(135deg,#FF6B6B,#A855F7)}
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.8}
+        body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.8}
         .nav{position:sticky;top:0;z-index:100;background:rgba(255,250,249,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.04);padding:14px 24px}
         .nav-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
         .nav-left{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary)}
-        .nav-logo{width:32px;height:32px;border-radius:8px}.nav-brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:18px;background:var(--gradient-coral);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .nav-logo{width:32px;height:32px;border-radius:8px}
+        .nav-brand{font-weight:800;font-size:18px;background:var(--gradient-coral);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
         .lang-toggle{display:flex;background:rgba(0,0,0,0.04);border-radius:50px;padding:3px}
         .lang-btn{padding:6px 14px;border:none;border-radius:50px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:all 0.3s;background:transparent;color:var(--text-tertiary)}
         .lang-btn.active{background:var(--gradient-coral);color:white}
         .content{max-width:800px;margin:0 auto;padding:48px 24px 80px}
-        .page-icon{font-size:40px;margin-bottom:12px}.page-title{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;margin-bottom:8px}
+        .page-icon{font-size:40px;margin-bottom:12px}
+        .page-title{font-size:32px;font-weight:800;margin-bottom:8px}
         .page-updated{font-size:13px;color:var(--text-tertiary);margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid var(--coral-light)}
         .intro{font-size:16px;color:var(--text-secondary);margin-bottom:32px;padding:20px 24px;background:var(--coral-light);border-radius:12px;border-left:4px solid var(--coral)}
         h3{font-size:18px;font-weight:700;margin:32px 0 12px;display:flex;align-items:center;gap:8px}
@@ -26,14 +28,14 @@
         p{font-size:15px;color:var(--text-secondary);margin-bottom:12px}
         ul{padding-left:20px;margin-bottom:16px}li{font-size:15px;color:var(--text-secondary);margin-bottom:8px;line-height:1.7}strong{color:var(--text-primary)}
         .footer{text-align:center;padding:24px;border-top:1px solid rgba(0,0,0,0.06);font-size:13px;color:var(--text-tertiary)}.footer a{color:var(--coral);text-decoration:none}
-        [data-lang-vi]{display:block}[data-lang-en]{display:none}body.en [data-lang-vi]{display:none}body.en [data-lang-en]{display:block}
-        span[data-lang-vi]{display:inline}span[data-lang-en]{display:none}body.en span[data-lang-vi]{display:none}body.en span[data-lang-en]{display:inline}
+        [data-lang-vi]{display:none}[data-lang-en]{display:block}body.vi [data-lang-vi]{display:block}body.vi [data-lang-en]{display:none}
+        span[data-lang-vi]{display:none}span[data-lang-en]{display:inline}body.vi span[data-lang-vi]{display:inline}body.vi span[data-lang-en]{display:none}
     </style>
 </head>
 <body>
     <div class="nav"><div class="nav-inner">
         <a href="index.html" class="nav-left"><img src="logo_redmode.png" alt="RedMode" class="nav-logo"><span class="nav-brand">RedMode</span></a>
-        <div class="lang-toggle"><button class="lang-btn active" id="btn-vi" onclick="setLang('vi')">VI</button><button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button></div>
+        <div class="lang-toggle"><button class="lang-btn" id="btn-vi" onclick="setLang('vi')">VI</button><button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button></div>
     </div></div>
     <div class="content">
         <div class="page-icon">📋</div>
@@ -91,8 +93,8 @@
     <div class="footer">© 2026 RedMode · <a href="privacy.html"><span data-lang-vi>Chính sách bảo mật</span><span data-lang-en>Privacy Policy</span></a> · <a href="index.html"><span data-lang-vi>Trang chủ</span><span data-lang-en>Home</span></a></div>
     <script>
         function setLang(lang) {
-            if (lang === 'en') { document.body.classList.add('en'); document.documentElement.lang = 'en'; }
-            else { document.body.classList.remove('en'); document.documentElement.lang = 'vi'; }
+            if (lang === 'vi') { document.body.classList.add('vi'); document.documentElement.lang = 'vi'; }
+            else { document.body.classList.remove('vi'); document.documentElement.lang = 'en'; }
             document.getElementById('btn-vi').classList.toggle('active', lang === 'vi');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
             try { localStorage.setItem('redmode-lang', lang); } catch (e) {}
