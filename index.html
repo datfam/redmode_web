@@ -3,88 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedMode — Privacy Policy</title>
+    <title>RedMode — Understand Her Every Day</title>
+    <meta name="description" content="RedMode helps boyfriends understand and support their girlfriends through their menstrual cycle.">
     <link rel="icon" type="image/png" href="logo_redmode.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        :root{--coral:#FF6B6B;--coral-light:#FFE8E8;--bg:#FFFAF9;--text-primary:#1A1A2E;--text-secondary:#6B7280;--text-tertiary:#9CA3AF;--gradient-coral:linear-gradient(135deg,#FF6B6B,#A855F7)}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.8}
-        .nav{position:sticky;top:0;z-index:100;background:rgba(255,250,249,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.04);padding:14px 24px}
-        .nav-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-        .nav-left{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary)}
-        .nav-logo{width:32px;height:32px;border-radius:8px}
-        .nav-brand{font-weight:800;font-size:18px;background:var(--gradient-coral);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .lang-toggle{display:flex;background:rgba(0,0,0,0.04);border-radius:50px;padding:3px}
-        .lang-btn{padding:6px 14px;border:none;border-radius:50px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:all 0.3s;background:transparent;color:var(--text-tertiary)}
-        .lang-btn.active{background:var(--gradient-coral);color:white}
-        .content{max-width:800px;margin:0 auto;padding:48px 24px 80px}
-        .page-icon{font-size:40px;margin-bottom:12px}
-        .page-title{font-size:32px;font-weight:800;margin-bottom:8px}
-        .page-updated{font-size:13px;color:var(--text-tertiary);margin-bottom:32px;padding-bottom:24px;border-bottom:2px solid var(--coral-light)}
-        .intro{font-size:16px;color:var(--text-secondary);margin-bottom:32px;padding:20px 24px;background:var(--coral-light);border-radius:12px;border-left:4px solid var(--coral)}
-        h3{font-size:18px;font-weight:700;margin:32px 0 12px;display:flex;align-items:center;gap:8px}
-        h3 .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--gradient-coral);color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
-        p{font-size:15px;color:var(--text-secondary);margin-bottom:12px}
-        ul{padding-left:20px;margin-bottom:16px}li{font-size:15px;color:var(--text-secondary);margin-bottom:8px;line-height:1.7}strong{color:var(--text-primary)}
-        .footer{text-align:center;padding:24px;border-top:1px solid rgba(0,0,0,0.06);font-size:13px;color:var(--text-tertiary)}.footer a{color:var(--coral);text-decoration:none}
-        [data-lang-vi]{display:none}[data-lang-en]{display:block}body.vi [data-lang-vi]{display:block}body.vi [data-lang-en]{display:none}
-        span[data-lang-vi]{display:none}span[data-lang-en]{display:inline}body.vi span[data-lang-vi]{display:inline}body.vi span[data-lang-en]{display:none}
+        :root {
+            --coral: #FF6B6B;
+            --coral-light: #FFE8E8;
+            --purple: #A855F7;
+            --teal: #2DD4BF;
+            --bg: #FFFAF9;
+            --card: #FFFFFF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #6B7280;
+            --text-tertiary: #9CA3AF;
+            --gradient-hero: linear-gradient(135deg, #FFF5F5 0%, #FEE2E2 30%, #FCE7F3 60%, #F3E8FF 100%);
+            --gradient-coral: linear-gradient(135deg, #FF6B6B, #A855F7);
+            --radius: 20px;
+            --shadow: 0 4px 24px rgba(255, 107, 107, 0.08);
+            --shadow-lg: 0 12px 48px rgba(255, 107, 107, 0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Lang */
+        .lang-toggle {
+            position: fixed; top: 20px; right: 20px; z-index: 1000;
+            display: flex; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 50px; padding: 4px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); border: 1px solid rgba(255,107,107,0.1);
+        }
+        .lang-btn {
+            padding: 8px 18px; border: none; border-radius: 50px; font-family: inherit; font-size: 13px; font-weight: 700;
+            cursor: pointer; transition: all 0.3s; background: transparent; color: var(--text-tertiary);
+        }
+        .lang-btn.active { background: var(--gradient-coral); color: white; box-shadow: 0 2px 12px rgba(255,107,107,0.3); }
+
+        /* Nav */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; padding: 16px 0; transition: all 0.4s; }
+        nav.scrolled { background: rgba(255,250,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 20px rgba(0,0,0,0.04); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 12px; }
+        .nav-logo { width: 40px; height: 40px; border-radius: 10px; }
+        .nav-brand { font-weight: 800; font-size: 20px; background: var(--gradient-coral); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { margin-left: auto; display: flex; gap: 24px; margin-right: 100px; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 14px; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--coral); }
+
+        /* Container */
+        .container { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+
+        /* Hero */
+        .hero {
+            width: 100%; min-height: 100vh; background: var(--gradient-hero); display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden;
+        }
+        .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 120px; background: linear-gradient(to top, var(--bg), transparent); }
+        .hero-float { position: absolute; font-size: 40px; opacity: 0.15; animation: floatUp 8s ease-in-out infinite; }
+        .hero-float:nth-child(1) { left: 8%; top: 20%; animation-delay: 0s; font-size: 50px; }
+        .hero-float:nth-child(2) { right: 12%; top: 30%; animation-delay: 2s; font-size: 35px; }
+        .hero-float:nth-child(3) { left: 15%; bottom: 25%; animation-delay: 4s; font-size: 45px; }
+        .hero-float:nth-child(4) { right: 8%; bottom: 35%; animation-delay: 1s; font-size: 38px; }
+        .hero-float:nth-child(5) { left: 50%; top: 15%; animation-delay: 3s; font-size: 32px; }
+        @keyframes floatUp { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+        .hero-content { position: relative; z-index: 2; max-width: 700px; }
+        .hero-logo { width: 120px; height: 120px; border-radius: 30px; box-shadow: 0 16px 64px rgba(255,107,107,0.2); margin-bottom: 32px; animation: logoIn 1s ease-out; }
+        @keyframes logoIn { from { opacity: 0; transform: scale(0.8) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .hero h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; animation: fadeUp 0.8s ease-out 0.2s both; }
+        .hero h1 .gradient-text { background: var(--gradient-coral); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: clamp(16px, 2.5vw, 20px); color: var(--text-secondary); max-width: 520px; margin: 0 auto 36px; animation: fadeUp 0.8s ease-out 0.4s both; }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px; background: var(--gradient-coral); color: white;
+            text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 16px; box-shadow: 0 8px 32px rgba(255,107,107,0.3);
+            transition: all 0.3s; animation: fadeUp 0.8s ease-out 0.6s both;
+        }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,107,107,0.4); }
+        .hero-cta svg { width: 20px; height: 20px; }
+        .hero-badges { margin-top: 24px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; animation: fadeUp 0.8s ease-out 0.8s both; }
+        .hero-badge { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-tertiary); font-weight: 600; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Section labels */
+        .section-label { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--coral); margin-bottom: 12px; }
+        .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .section-desc { font-size: 17px; color: var(--text-secondary); max-width: 600px; margin-bottom: 48px; }
+
+        /* Weather */
+        .weather-wrap { padding: 0 24px; }
+        .weather-section { background: var(--gradient-hero); border-radius: 32px; padding: 64px 48px; max-width: 1100px; margin: 0 auto; }
+        .weather-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-top: 40px; }
+        .weather-card { background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); border-radius: var(--radius); padding: 24px 16px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid rgba(255,255,255,0.8); }
+        .weather-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .weather-icon { font-size: 36px; margin-bottom: 10px; }
+        .weather-name { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+        .weather-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .feature-card { background: var(--card); border-radius: var(--radius); padding: 32px; border: 1px solid rgba(0,0,0,0.04); box-shadow: var(--shadow); transition: all 0.35s; position: relative; overflow: hidden; }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-coral); opacity: 0; transition: opacity 0.3s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .feature-card:hover::before { opacity: 1; }
+        .feature-emoji { font-size: 32px; margin-bottom: 16px; display: block; }
+        .feature-name { font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+        .feature-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Bro AI */
+        .ai-wrap { padding: 0 24px; }
+        .ai-section { background: linear-gradient(135deg, #1A1A2E 0%, #2D1B4E 50%, #1A1A2E 100%); border-radius: 32px; padding: 72px 48px; color: white; position: relative; overflow: hidden; max-width: 1100px; margin: -40px auto 0; }
+        .ai-section::before { content: ''; position: absolute; top: -50%; right: -20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,107,107,0.15), transparent 70%); border-radius: 50%; }
+        .ai-section::after { content: ''; position: absolute; bottom: -30%; left: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(168,85,247,0.12), transparent 70%); border-radius: 50%; }
+        .ai-content { position: relative; z-index: 2; }
+        .ai-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.2); border-radius: 50px; font-size: 12px; font-weight: 700; color: var(--coral); margin-bottom: 20px; }
+        .ai-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .ai-desc { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 560px; margin-bottom: 36px; }
+        .ai-perks { display: flex; flex-wrap: wrap; gap: 12px; }
+        .ai-perk { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 50px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9); }
+        .ai-chat-mock { margin-top: 40px; max-width: 500px; }
+        .chat-bubble { padding: 14px 18px; border-radius: 18px; font-size: 14px; line-height: 1.5; margin-bottom: 10px; max-width: 85%; }
+        .chat-bubble.user { background: var(--gradient-coral); color: white; margin-left: auto; border-bottom-right-radius: 6px; }
+        .chat-bubble.ai { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); border-bottom-left-radius: 6px; border: 1px solid rgba(255,255,255,0.06); }
+
+        /* Footer */
+        footer { background: var(--text-primary); color: rgba(255,255,255,0.6); padding: 48px 24px; text-align: center; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-brand { font-size: 22px; font-weight: 800; background: var(--gradient-coral); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .footer-tagline { font-size: 14px; margin-bottom: 24px; }
+        .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--coral); }
+        .footer-copy { font-size: 13px; }
+        .footer-contact { margin-top: 16px; font-size: 13px; }
+        .footer-contact a { color: var(--coral); text-decoration: none; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .weather-section, .ai-section { padding: 40px 24px; border-radius: 24px; }
+            .weather-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .ai-perks { flex-direction: column; }
+        }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(32px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Language: Default = EN shown, VI hidden. Add body.vi to flip */
+        [data-lang-vi] { display: none; }
+        [data-lang-en] { display: block; }
+        body.vi [data-lang-vi] { display: block; }
+        body.vi [data-lang-en] { display: none; }
+        span[data-lang-vi], a[data-lang-vi] { display: none; }
+        span[data-lang-en], a[data-lang-en] { display: inline; }
+        body.vi span[data-lang-vi], body.vi a[data-lang-vi] { display: inline; }
+        body.vi span[data-lang-en], body.vi a[data-lang-en] { display: none; }
     </style>
 </head>
 <body>
-    <div class="nav"><div class="nav-inner">
-        <a href="index.html" class="nav-left"><img src="logo_redmode.png" alt="RedMode" class="nav-logo"><span class="nav-brand">RedMode</span></a>
-        <div class="lang-toggle"><button class="lang-btn" id="btn-vi" onclick="setLang('vi')">VI</button><button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button></div>
-    </div></div>
-    <div class="content">
-        <div class="page-icon">🔒</div>
-        <div data-lang-vi>
-            <div class="page-title">Chính Sách Bảo Mật</div>
-            <div class="page-updated">Cập nhật lần cuối: 24 tháng 2, 2026</div>
-            <div class="intro">RedMode ("chúng tôi", "ứng dụng") tôn trọng quyền riêng tư của bạn. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn.</div>
-            <h3><span class="num">1</span> Thông tin chúng tôi thu thập</h3>
-            <p>RedMode được thiết kế với nguyên tắc <strong>ưu tiên quyền riêng tư</strong>. Dữ liệu chu kỳ kinh nguyệt, ghi chú, kỷ niệm và thông tin trong Vault được lưu trữ <strong>cục bộ trên thiết bị</strong> của bạn và được đồng bộ qua iCloud cá nhân của bạn. Chúng tôi không truy cập được dữ liệu này.</p>
-            <ul><li><strong>Dữ liệu cục bộ:</strong> Thông tin chu kỳ, ghi chú, vault, cài đặt — lưu trên thiết bị và iCloud cá nhân của bạn</li><li><strong>Dữ liệu đăng ký:</strong> Nếu bạn mua PRO, giao dịch được xử lý bởi Apple thông qua App Store. Chúng tôi không thu thập thông tin thanh toán</li><li><strong>Dữ liệu Bro AI:</strong> Khi sử dụng tính năng AI chat, nội dung câu hỏi được gửi đến nhà cung cấp AI bên thứ ba (Groq) để xử lý. Chúng tôi không lưu trữ lịch sử chat trên server</li><li><strong>Phân tích:</strong> Chúng tôi không sử dụng bất kỳ công cụ phân tích hay theo dõi bên thứ ba nào</li></ul>
-            <h3><span class="num">2</span> Cách chúng tôi sử dụng thông tin</h3>
-            <ul><li>Cung cấp dự báo chu kỳ và lời khuyên cá nhân hoá</li><li>Xử lý yêu cầu AI chat (qua nhà cung cấp bên thứ ba)</li><li>Quản lý đăng ký PRO (qua Apple)</li></ul>
-            <h3><span class="num">3</span> Chia sẻ dữ liệu</h3>
-            <p>Chúng tôi <strong>không bán, chia sẻ hoặc cho thuê</strong> dữ liệu cá nhân của bạn cho bất kỳ bên thứ ba nào. Dữ liệu duy nhất được truyền ra bên ngoài là nội dung câu hỏi AI chat gửi đến Groq để xử lý, và được xoá sau khi phản hồi.</p>
-            <h3><span class="num">4</span> Bảo mật dữ liệu</h3>
-            <p>Vault được bảo vệ bằng sinh trắc học (Face ID/Touch ID). Dữ liệu lưu trữ cục bộ và đồng bộ qua iCloud được mã hoá bởi Apple.</p>
-            <h3><span class="num">5</span> Quyền của bạn</h3>
-            <ul><li>Xoá tất cả dữ liệu bất cứ lúc nào trong phần Cài đặt của ứng dụng</li><li>Tắt iCloud sync để giữ dữ liệu chỉ trên thiết bị</li><li>Tắt thông báo bất cứ lúc nào</li></ul>
-            <h3><span class="num">6</span> Quyền riêng tư trẻ em</h3>
-            <p>RedMode không dành cho trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập thông tin từ trẻ em.</p>
-            <h3><span class="num">7</span> Thay đổi chính sách</h3>
-            <p>Chúng tôi có thể cập nhật chính sách này. Thay đổi quan trọng sẽ được thông báo trong ứng dụng.</p>
-            <h3><span class="num">8</span> Liên hệ</h3>
-            <p>Nếu có câu hỏi về chính sách bảo mật, vui lòng liên hệ: <strong>phamtiendat1099@gmail.com</strong></p>
+
+    <div class="lang-toggle">
+        <button class="lang-btn" id="btn-vi" onclick="setLang('vi')">🇻🇳 VI</button>
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+
+    <nav id="nav">
+        <div class="nav-inner">
+            <img src="logo_redmode.png" alt="RedMode" class="nav-logo">
+            <span class="nav-brand">RedMode</span>
+            <div class="nav-links">
+                <a href="#features"><span data-lang-vi>Tính năng</span><span data-lang-en>Features</span></a>
+                <a href="#bro-ai">Bro AI</a>
+                <a href="privacy.html"><span data-lang-vi>Bảo mật</span><span data-lang-en>Privacy</span></a>
+                <a href="terms.html"><span data-lang-vi>Điều khoản</span><span data-lang-en>Terms</span></a>
+            </div>
         </div>
-        <div data-lang-en>
-            <div class="page-title">Privacy Policy</div>
-            <div class="page-updated">Last updated: February 24, 2026</div>
-            <div class="intro">RedMode ("we", "the app") respects your privacy. This policy explains how we collect, use, and protect your information.</div>
-            <h3><span class="num">1</span> Information We Collect</h3>
-            <p>RedMode is designed with a <strong>privacy-first</strong> approach. Cycle data, notes, anniversaries, and Vault information are stored <strong>locally on your device</strong> and synced via your personal iCloud. We cannot access this data.</p>
-            <ul><li><strong>Local data:</strong> Cycle information, notes, vault, settings — stored on your device and your personal iCloud</li><li><strong>Subscription data:</strong> If you purchase PRO, transactions are processed by Apple through the App Store. We do not collect payment information</li><li><strong>Bro AI data:</strong> When using the AI chat feature, your questions are sent to a third-party AI provider (Groq) for processing. We do not store chat history on our servers</li><li><strong>Analytics:</strong> We do not use any third-party analytics or tracking tools</li></ul>
-            <h3><span class="num">2</span> How We Use Information</h3>
-            <ul><li>Provide personalized cycle forecasts and advice</li><li>Process AI chat requests (via third-party provider)</li><li>Manage PRO subscriptions (via Apple)</li></ul>
-            <h3><span class="num">3</span> Data Sharing</h3>
-            <p>We <strong>do not sell, share, or rent</strong> your personal data to any third parties. The only data transmitted externally is AI chat content sent to Groq for processing, which is deleted after the response is generated.</p>
-            <h3><span class="num">4</span> Data Security</h3>
-            <p>The Vault is protected by biometric authentication (Face ID/Touch ID). Locally stored data and iCloud synced data are encrypted by Apple.</p>
-            <h3><span class="num">5</span> Your Rights</h3>
-            <ul><li>Delete all data at any time from the app's Settings</li><li>Disable iCloud sync to keep data on-device only</li><li>Turn off notifications at any time</li></ul>
-            <h3><span class="num">6</span> Children's Privacy</h3>
-            <p>RedMode is not intended for children under 13. We do not knowingly collect information from children.</p>
-            <h3><span class="num">7</span> Policy Changes</h3>
-            <p>We may update this policy. Significant changes will be communicated within the app.</p>
-            <h3><span class="num">8</span> Contact</h3>
-            <p>If you have questions about this privacy policy, please contact: <strong>phamtiendat1099@gmail.com</strong></p>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-float">🌧</div><div class="hero-float">☀️</div><div class="hero-float">🔥</div><div class="hero-float">⛈</div><div class="hero-float">🌤</div>
+        <div class="hero-content">
+            <img src="logo_redmode.png" alt="RedMode" class="hero-logo">
+            <div data-lang-vi><h1>Hiểu Cô Ấy Hơn<br><span class="gradient-text">Mỗi Ngày</span></h1><p>App giúp con trai hiểu và hỗ trợ bạn gái qua chu kỳ kinh nguyệt. Dự báo "thời tiết tình cảm", AI tư vấn 24/7, vault bí mật lưu mọi thứ về cô ấy.</p></div>
+            <div data-lang-en><h1>Understand Her<br><span class="gradient-text">Every Day</span></h1><p>The app that helps boyfriends understand and support their girlfriends through their menstrual cycle. Emotional weather forecasts, 24/7 AI advice, and a secret vault.</p></div>
+            <a href="#" class="hero-cta">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/></svg>
+                <span data-lang-vi>Tải trên App Store</span><span data-lang-en>Download on App Store</span>
+            </a>
+            <div class="hero-badges">
+                <div class="hero-badge"><span>🔒</span> <span data-lang-vi>100% riêng tư</span><span data-lang-en>100% private</span></div>
+                <div class="hero-badge"><span>🤖</span> <span data-lang-vi>AI tư vấn 24/7</span><span data-lang-en>AI advisor 24/7</span></div>
+                <div class="hero-badge"><span>🌧</span> <span data-lang-vi>Ẩn dụ thời tiết</span><span data-lang-en>Weather metaphor</span></div>
+            </div>
         </div>
     </div>
-    <div class="footer">© 2026 RedMode · <a href="terms.html"><span data-lang-vi>Điều khoản sử dụng</span><span data-lang-en>Terms of Service</span></a> · <a href="index.html"><span data-lang-vi>Trang chủ</span><span data-lang-en>Home</span></a></div>
+
+    <div class="weather-wrap">
+        <div class="weather-section reveal">
+            <div data-lang-vi><div class="section-label">DỰ BÁO THỜI TIẾT TÌNH CẢM</div><div class="section-title">Không cần hiểu y khoa.<br>Chỉ cần nhìn thời tiết.</div><div class="section-desc">RedMode dùng ẩn dụ thời tiết để mô tả chu kỳ của cô ấy. Đơn giản, dễ hiểu, và giúp bạn biết chính xác phải làm gì.</div></div>
+            <div data-lang-en><div class="section-label">EMOTIONAL WEATHER FORECAST</div><div class="section-title">No medical jargon needed.<br>Just check the weather.</div><div class="section-desc">RedMode uses weather metaphors to describe her cycle. Simple, intuitive, and tells you exactly what to do.</div></div>
+            <div class="weather-grid">
+                <div class="weather-card reveal"><div class="weather-icon">🌧</div><div data-lang-vi><div class="weather-name">Mưa Rào</div><div class="weather-desc">Kỳ kinh — cần chăm sóc, kiên nhẫn</div></div><div data-lang-en><div class="weather-name">Heavy Rain</div><div class="weather-desc">Period — needs care &amp; patience</div></div></div>
+                <div class="weather-card reveal"><div class="weather-icon">☀️</div><div data-lang-vi><div class="weather-name">Trời Quang</div><div class="weather-desc">Năng lượng lên — rủ đi chơi!</div></div><div data-lang-en><div class="weather-name">Clear Sky</div><div class="weather-desc">Energy rising — plan dates!</div></div></div>
+                <div class="weather-card reveal"><div class="weather-icon">🔥</div><div data-lang-vi><div class="weather-name">Nắng Nóng</div><div class="weather-desc">Tự tin nhất — khen cô ấy đi!</div></div><div data-lang-en><div class="weather-name">Heat Wave</div><div class="weather-desc">Peak confidence — compliment her!</div></div></div>
+                <div class="weather-card reveal"><div class="weather-icon">🌤</div><div data-lang-vi><div class="weather-name">Mây Rải Rác</div><div class="weather-desc">Chuyển tiếp — ổn định, đừng drama</div></div><div data-lang-en><div class="weather-name">Partly Cloudy</div><div class="weather-desc">Transition — stay stable, no drama</div></div></div>
+                <div class="weather-card reveal"><div class="weather-icon">⛈</div><div data-lang-vi><div class="weather-name">Bão Sắp Đến</div><div class="weather-desc">PMS — kiên nhẫn x2, đồ ngọt!</div></div><div data-lang-en><div class="weather-name">Storm Coming</div><div class="weather-desc">PMS — extra patience &amp; snacks!</div></div></div>
+                <div class="weather-card reveal"><div class="weather-icon">🌫</div><div data-lang-vi><div class="weather-name">Sương Mù</div><div class="weather-desc">Trễ kinh — bình tĩnh, support</div></div><div data-lang-en><div class="weather-name">Dense Fog</div><div class="weather-desc">Late period — stay calm, support</div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="features">
+        <div data-lang-vi><div class="section-label">TÍNH NĂNG</div><div class="section-title">Mọi thứ bạn cần để<br>trở thành bạn trai tốt hơn</div><div class="section-desc">Từ lời khuyên hàng ngày đến vault bí mật — RedMode có tất cả.</div></div>
+        <div data-lang-en><div class="section-label">FEATURES</div><div class="section-title">Everything you need to<br>be a better boyfriend</div><div class="section-desc">From daily tips to a secret vault — RedMode has it all.</div></div>
+        <div class="features-grid">
+            <div class="feature-card reveal"><span class="feature-emoji">📅</span><div data-lang-vi><div class="feature-name">Dự Báo 7 Ngày</div><div class="feature-desc">Biết trước "thời tiết tình cảm" cả tuần. Chuẩn bị tâm lý và hành động phù hợp.</div></div><div data-lang-en><div class="feature-name">7-Day Forecast</div><div class="feature-desc">See the emotional weather for the whole week. Prepare your mindset and actions accordingly.</div></div></div>
+            <div class="feature-card reveal"><span class="feature-emoji">💬</span><div data-lang-vi><div class="feature-name">Câu Nói Hàng Ngày</div><div class="feature-desc">Mỗi ngày một câu nói phù hợp phase hiện tại. Copy và gửi cho cô ấy ngay.</div></div><div data-lang-en><div class="feature-name">Daily Sweet Text</div><div class="feature-desc">A phase-appropriate sweet message every day. Copy and send to her instantly.</div></div></div>
+            <div class="feature-card reveal"><span class="feature-emoji">🔐</span><div data-lang-vi><div class="feature-name">Két Bí Mật</div><div class="feature-desc">Lưu đồ ăn yêu thích, size quần áo, kỷ niệm, ghi chú — khoá bằng FaceID.</div></div><div data-lang-en><div class="feature-name">Secret Vault</div><div class="feature-desc">Save her favorite food, clothing sizes, anniversaries, notes — locked with FaceID.</div></div></div>
+            <div class="feature-card reveal"><span class="feature-emoji">🚨</span><div data-lang-vi><div class="feature-name">SOS Tình Huống</div><div class="feature-desc">Cô ấy khóc? Giận? Không nói chuyện? Hướng dẫn xử lý tình huống từng bước.</div></div><div data-lang-en><div class="feature-name">SOS Scenarios</div><div class="feature-desc">She's crying? Angry? Silent treatment? Step-by-step guides for every situation.</div></div></div>
+            <div class="feature-card reveal"><span class="feature-emoji">🎯</span><div data-lang-vi><div class="feature-name">Nhiệm Vụ Hàng Ngày</div><div class="feature-desc">Hoàn thành missions để lên level và mở thành tích. Gamification chăm sóc bạn gái!</div></div><div data-lang-en><div class="feature-name">Daily Missions</div><div class="feature-desc">Complete missions to level up and unlock achievements. Gamified girlfriend care!</div></div></div>
+            <div class="feature-card reveal"><span class="feature-emoji">📱</span><div data-lang-vi><div class="feature-name">Widget iOS</div><div class="feature-desc">Xem phase hiện tại ngay trên màn hình chính. Không cần mở app.</div></div><div data-lang-en><div class="feature-name">iOS Widget</div><div class="feature-desc">See her current phase right on your home screen. No need to open the app.</div></div></div>
+        </div>
+    </div>
+
+    <div class="ai-wrap" id="bro-ai">
+        <div class="ai-section reveal">
+            <div class="ai-content">
+                <div class="ai-badge">⭐ EXCLUSIVE FEATURE</div>
+                <div data-lang-vi><div class="ai-title">Bro AI — Trợ Lý Tình Cảm<br>Hiểu Chu Kỳ Bạn Gái</div><div class="ai-desc">Hỏi bất cứ điều gì về tình cảm, AI sẽ tư vấn dựa trên phase hiện tại của cô ấy. Như có thằng bạn thân luôn hiểu phụ nữ bên cạnh.</div></div>
+                <div data-lang-en><div class="ai-title">Bro AI — Relationship Advisor<br>That Knows Her Cycle</div><div class="ai-desc">Ask anything about your relationship. AI gives personalized advice based on her current cycle phase. Like having a best friend who actually gets women.</div></div>
+                <div class="ai-perks">
+                    <div class="ai-perk"><span>🧠</span> <span data-lang-vi>Hiểu chu kỳ real-time</span><span data-lang-en>Real-time cycle awareness</span></div>
+                    <div class="ai-perk"><span>💬</span> <span data-lang-vi>Tư vấn 24/7</span><span data-lang-en>24/7 advice</span></div>
+                    <div class="ai-perk"><span>🎯</span> <span data-lang-vi>Lời khuyên cụ thể</span><span data-lang-en>Actionable tips</span></div>
+                </div>
+                <div class="ai-chat-mock">
+                    <div data-lang-vi><div class="chat-bubble user">Cô ấy đau bụng, mình nên làm gì?</div><div class="chat-bubble ai">Ông ơi, cô ấy đang mệt lắm đấy. Về mua chai nước ấm chườm bụng đi, rồi hỏi nhẹ "em muốn ăn gì anh mua cho?" Đừng hỏi nhiều, cứ ngồi cạnh là cô ấy thấy ấm lòng rồi. 💪</div></div>
+                    <div data-lang-en><div class="chat-bubble user">She has cramps, what should I do?</div><div class="chat-bubble ai">Dude, she's probably tired and in pain right now. Grab a heating pad and some chocolate on your way home. Ask her "hey babe, want me to get you anything?" — instant boyfriend points. 💪</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="text-align: center; padding: 60px 24px;">
+        <div data-lang-vi><div class="section-label">PHÁP LÝ</div><div class="section-title" style="margin-bottom: 32px;">Minh bạch &amp; An toàn</div></div>
+        <div data-lang-en><div class="section-label">LEGAL</div><div class="section-title" style="margin-bottom: 32px;">Transparent &amp; Safe</div></div>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="privacy.html" style="display:inline-flex;align-items:center;gap:10px;padding:18px 32px;background:var(--card);border-radius:var(--radius);text-decoration:none;color:var(--text-primary);font-weight:700;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04);"><span style="font-size:24px;">🔒</span><span><span data-lang-vi>Chính Sách Bảo Mật</span><span data-lang-en>Privacy Policy</span></span></a>
+            <a href="terms.html" style="display:inline-flex;align-items:center;gap:10px;padding:18px 32px;background:var(--card);border-radius:var(--radius);text-decoration:none;color:var(--text-primary);font-weight:700;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04);"><span style="font-size:24px;">📋</span><span><span data-lang-vi>Điều Khoản Sử Dụng</span><span data-lang-en>Terms of Service</span></span></a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">RedMode</div>
+            <div class="footer-tagline"><span data-lang-vi>Hiểu cô ấy hơn mỗi ngày ❤️</span><span data-lang-en>Understand her every day ❤️</span></div>
+            <div class="footer-links">
+                <a href="#features"><span data-lang-vi>Tính năng</span><span data-lang-en>Features</span></a>
+                <a href="#bro-ai">Bro AI</a>
+                <a href="privacy.html"><span data-lang-vi>Bảo mật</span><span data-lang-en>Privacy</span></a>
+                <a href="terms.html"><span data-lang-vi>Điều khoản</span><span data-lang-en>Terms</span></a>
+            </div>
+            <div class="footer-copy">© 2026 RedMode. All rights reserved.</div>
+            <div class="footer-contact"><span data-lang-vi>Liên hệ: </span><span data-lang-en>Contact: </span><a href="mailto:phamtiendat1099@gmail.com">phamtiendat1099@gmail.com</a></div>
+        </div>
+    </footer>
+
     <script>
         function setLang(lang) {
             if (lang === 'vi') { document.body.classList.add('vi'); document.documentElement.lang = 'vi'; }
@@ -94,6 +294,11 @@
             try { localStorage.setItem('redmode-lang', lang); } catch (e) {}
         }
         try { var s = localStorage.getItem('redmode-lang'); if (s) setLang(s); } catch (e) {}
+        window.addEventListener('scroll', function () { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50); });
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
     </script>
 </body>
 </html>
