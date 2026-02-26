@@ -26,7 +26,7 @@
         h3{font-size:18px;font-weight:700;margin:32px 0 12px;display:flex;align-items:center;gap:8px}
         h3 .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--gradient-coral);color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
         p{font-size:15px;color:var(--text-secondary);margin-bottom:12px}
-        ul{padding-left:20px;margin-bottom:16px}li{font-size:15px;color:var(--text-secondary);margin-bottom:8px;line-height:1.7}strong{color:var(--text-primary)}
+        ul{padding-left:20px;margin-bottom:16px}li{font-size:15px;color:var(--text-secondary);margin-bottom:8px;line-height:1.7}li ul{margin-top:6px;margin-bottom:6px}strong{color:var(--text-primary)}a{color:var(--coral)}
         .footer{text-align:center;padding:24px;border-top:1px solid rgba(0,0,0,0.06);font-size:13px;color:var(--text-tertiary)}.footer a{color:var(--coral);text-decoration:none}
         [data-lang-vi]{display:none}[data-lang-en]{display:block}body.vi [data-lang-vi]{display:block}body.vi [data-lang-en]{display:none}
         span[data-lang-vi]{display:none}span[data-lang-en]{display:inline}body.vi span[data-lang-vi]{display:inline}body.vi span[data-lang-en]{display:none}
@@ -43,7 +43,7 @@
         <!-- ===== VIETNAMESE ===== -->
         <div data-lang-vi>
             <div class="page-title">Chính Sách Bảo Mật</div>
-            <div class="page-updated">Cập nhật lần cuối: 24 tháng 2, 2026</div>
+            <div class="page-updated">Cập nhật lần cuối: 26 tháng 2, 2026</div>
             <div class="intro">RedMode tôn trọng quyền riêng tư của bạn. Chính sách này giải thích cách chúng tôi xử lý thông tin của bạn.</div>
 
             <h3><span class="num">1</span> Thông tin chúng tôi thu thập</h3>
@@ -51,7 +51,13 @@
             <ul>
                 <li><strong>Dữ liệu cục bộ:</strong> Chu kỳ, ghi chú, vault, cài đặt — lưu trên thiết bị và iCloud của bạn</li>
                 <li><strong>Đăng ký PRO:</strong> Giao dịch được xử lý bởi Apple. Chúng tôi không thu thập thông tin thanh toán</li>
-                <li><strong>Bro AI:</strong> Câu hỏi được gửi đến Groq (bên thứ ba) để xử lý. Groq không lưu trữ nội dung hội thoại. Chúng tôi cũng không lưu chat trên server</li>
+                <li><strong>Bro AI (Chat AI):</strong> Khi bạn sử dụng tính năng Bro AI, dữ liệu sau được gửi đến <strong>Groq</strong> (<a href="https://groq.com" target="_blank">groq.com</a>) — dịch vụ AI bên thứ ba — để xử lý và tạo phản hồi:
+                    <ul>
+                        <li>Nội dung tin nhắn chat bạn nhập</li>
+                        <li>Giai đoạn chu kỳ hiện tại (VD: kỳ kinh, rụng trứng)</li>
+                    </ul>
+                    Dữ liệu <strong>không</strong> được gửi: tên, email, số điện thoại, mã thiết bị, vị trí. Groq không lưu trữ nội dung hội thoại. Chúng tôi cũng không lưu chat trên server. Dữ liệu được thu thập trực tiếp từ bạn khi bạn nhập tin nhắn trong Bro AI.
+                </li>
                 <li><strong>Thông báo:</strong> Chỉ dùng thông báo cục bộ iOS, không gửi dữ liệu ra ngoài</li>
                 <li><strong>Phân tích:</strong> Chúng tôi không sử dụng bất kỳ công cụ theo dõi bên thứ ba nào</li>
             </ul>
@@ -64,7 +70,9 @@
             </ul>
 
             <h3><span class="num">3</span> Chia sẻ dữ liệu</h3>
-            <p>Chúng tôi <strong>không bán hoặc chia sẻ</strong> dữ liệu cá nhân. Dữ liệu duy nhất truyền ra ngoài là nội dung AI chat gửi đến Groq để xử lý.</p>
+            <p>Chúng tôi <strong>không bán hoặc chia sẻ</strong> dữ liệu cá nhân. Dữ liệu duy nhất truyền ra ngoài là nội dung tin nhắn chat và giai đoạn chu kỳ hiện tại gửi đến Groq để xử lý.</p>
+            <p>Trước khi sử dụng Bro AI lần đầu, ứng dụng sẽ hiển thị màn hình đồng ý riêng, nêu rõ dữ liệu nào được gửi và gửi đến đâu. Bạn phải đồng ý trước khi bất kỳ dữ liệu nào được truyền đi.</p>
+            <p>Groq xử lý dữ liệu theo <a href="https://groq.com/privacy-policy/" target="_blank">chính sách bảo mật của Groq</a> và cung cấp mức bảo vệ dữ liệu tương đương thông qua truyền tải mã hoá HTTPS và không lưu trữ nội dung hội thoại.</p>
 
             <h3><span class="num">4</span> Bảo mật</h3>
             <ul>
@@ -93,7 +101,7 @@
         <!-- ===== ENGLISH ===== -->
         <div data-lang-en>
             <div class="page-title">Privacy Policy</div>
-            <div class="page-updated">Last updated: February 24, 2026</div>
+            <div class="page-updated">Last updated: February 26, 2026</div>
             <div class="intro">RedMode respects your privacy. This policy explains how we handle your information.</div>
 
             <h3><span class="num">1</span> Information We Collect</h3>
@@ -101,7 +109,13 @@
             <ul>
                 <li><strong>Local data:</strong> Cycle info, notes, vault, settings — stored on your device and your iCloud</li>
                 <li><strong>PRO subscription:</strong> Transactions processed by Apple. We do not collect payment information</li>
-                <li><strong>Bro AI:</strong> Questions are sent to Groq (third-party) for processing. Groq does not retain conversation content. We also do not store chats on our servers</li>
+                <li><strong>Bro AI (AI Chat):</strong> When you use the Bro AI feature, the following data is sent to <strong>Groq</strong> (<a href="https://groq.com" target="_blank">groq.com</a>) — a third-party AI service — for processing and generating responses:
+                    <ul>
+                        <li>Your chat message content</li>
+                        <li>Your current cycle phase (e.g. menstrual, ovulation)</li>
+                    </ul>
+                    Data that is <strong>not</strong> sent: name, email, phone number, device ID, location. Groq does not retain conversation content. We also do not store chats on our servers. Data is collected directly from you when you type a message in Bro AI.
+                </li>
                 <li><strong>Notifications:</strong> iOS local notifications only, no data sent externally</li>
                 <li><strong>Analytics:</strong> We do not use any third-party tracking tools</li>
             </ul>
@@ -114,7 +128,9 @@
             </ul>
 
             <h3><span class="num">3</span> Data Sharing</h3>
-            <p>We <strong>do not sell or share</strong> your personal data. The only data transmitted externally is AI chat content sent to Groq for processing.</p>
+            <p>We <strong>do not sell or share</strong> your personal data. The only data transmitted externally is your chat message content and current cycle phase, sent to Groq for processing.</p>
+            <p>Before using Bro AI for the first time, the app displays a dedicated consent screen that clearly identifies what data is sent and to whom. You must agree before any data is transmitted.</p>
+            <p>Groq processes data in accordance with <a href="https://groq.com/privacy-policy/" target="_blank">Groq's Privacy Policy</a> and provides equivalent data protection through encrypted HTTPS transmission and by not retaining conversation content.</p>
 
             <h3><span class="num">4</span> Security</h3>
             <ul>
