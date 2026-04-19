@@ -51,12 +51,12 @@
             <ul>
                 <li><strong>Dữ liệu cục bộ:</strong> Chu kỳ, ghi chú, vault, cài đặt — lưu trên thiết bị và iCloud của bạn</li>
                 <li><strong>Đăng ký PRO:</strong> Giao dịch được xử lý bởi Apple. Chúng tôi không thu thập thông tin thanh toán</li>
-                <li><strong>Bro AI (Chat AI):</strong> Khi bạn sử dụng tính năng Bro AI, dữ liệu sau được gửi thông qua máy chủ trung gian của chúng tôi (Cloudflare Worker) đến <strong>Google Gemini</strong> (<a href="https://ai.google.dev" target="_blank">ai.google.dev</a>) — dịch vụ AI bên thứ ba của Google — để xử lý và tạo phản hồi:
+                <li><strong>Bro AI (Chat AI):</strong> Khi bạn sử dụng tính năng Bro AI, dữ liệu sau được gửi thông qua máy chủ trung gian của chúng tôi (Cloudflare Worker) đến <strong>OpenRouter</strong> (<a href="https://openrouter.ai" target="_blank">openrouter.ai</a>) — dịch vụ định tuyến AI bên thứ ba — định tuyến yêu cầu đến mô hình <strong>Qwen của Alibaba</strong> (<a href="https://qwen.alibaba.com" target="_blank">qwen.alibaba.com</a>) để xử lý và tạo phản hồi:
                     <ul>
                         <li>Nội dung tin nhắn chat bạn nhập</li>
                         <li>Giai đoạn chu kỳ hiện tại (VD: kỳ kinh, rụng trứng)</li>
                     </ul>
-                    Dữ liệu <strong>không</strong> được gửi: tên, email, số điện thoại, mã thiết bị, vị trí. Google không sử dụng dữ liệu này để huấn luyện mô hình AI theo chính sách của Gemini API. Chúng tôi cũng không lưu nội dung chat trên server của mình. Dữ liệu được thu thập trực tiếp từ bạn khi bạn nhập tin nhắn trong Bro AI.
+                    Dữ liệu <strong>không</strong> được gửi: tên, email, số điện thoại, mã thiết bị, vị trí. OpenRouter không lưu trữ nội dung tin nhắn theo mặc định (chính sách Zero Data Retention). Chúng tôi cũng không lưu nội dung chat trên server của mình. Dữ liệu được thu thập trực tiếp từ bạn khi bạn nhập tin nhắn trong Bro AI.
                 </li>
                 <li><strong>Thông báo:</strong> Chỉ dùng thông báo cục bộ iOS, không gửi dữ liệu ra ngoài</li>
                 <li><strong>Phân tích:</strong> Chúng tôi không sử dụng bất kỳ công cụ theo dõi bên thứ ba nào</li>
@@ -65,20 +65,20 @@
             <h3><span class="num">2</span> Cách sử dụng thông tin</h3>
             <ul>
                 <li>Cung cấp dự báo chu kỳ và lời khuyên trên thiết bị</li>
-                <li>Xử lý yêu cầu AI chat qua Google Gemini</li>
+                <li>Xử lý yêu cầu AI chat qua OpenRouter (mô hình Qwen của Alibaba)</li>
                 <li>Quản lý đăng ký PRO qua Apple</li>
             </ul>
 
             <h3><span class="num">3</span> Chia sẻ dữ liệu</h3>
-            <p>Chúng tôi <strong>không bán hoặc chia sẻ</strong> dữ liệu cá nhân. Dữ liệu duy nhất truyền ra ngoài là nội dung tin nhắn chat và giai đoạn chu kỳ hiện tại gửi đến Google Gemini để xử lý.</p>
+            <p>Chúng tôi <strong>không bán hoặc chia sẻ</strong> dữ liệu cá nhân. Dữ liệu duy nhất truyền ra ngoài là nội dung tin nhắn chat và giai đoạn chu kỳ hiện tại gửi đến OpenRouter (và mô hình Qwen của Alibaba) để xử lý.</p>
             <p>Trước khi sử dụng Bro AI lần đầu, ứng dụng sẽ hiển thị màn hình đồng ý riêng, nêu rõ dữ liệu nào được gửi và gửi đến đâu. Bạn phải đồng ý trước khi bất kỳ dữ liệu nào được truyền đi.</p>
-            <p>Google xử lý dữ liệu theo <a href="https://policies.google.com/privacy" target="_blank">Chính sách Bảo mật của Google</a> và <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Điều khoản Gemini API</a>. Dữ liệu được truyền qua kết nối HTTPS mã hoá.</p>
+            <p>OpenRouter xử lý dữ liệu theo <a href="https://openrouter.ai/privacy" target="_blank">Chính sách Bảo mật của OpenRouter</a> và <a href="https://openrouter.ai/terms" target="_blank">Điều khoản Dịch vụ</a>. Alibaba xử lý dữ liệu theo <a href="https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-statement" target="_blank">Chính sách Bảo mật của Alibaba Cloud</a>. Dữ liệu được truyền qua kết nối HTTPS mã hoá.</p>
 
             <h3><span class="num">4</span> Bảo mật</h3>
             <ul>
                 <li>Vault bảo vệ bằng Face ID/Touch ID</li>
                 <li>Dữ liệu iCloud được mã hoá bởi Apple</li>
-                <li>Giao tiếp với Google Gemini qua HTTPS</li>
+                <li>Giao tiếp với OpenRouter qua HTTPS</li>
             </ul>
 
             <h3><span class="num">5</span> Quyền của bạn</h3>
@@ -109,12 +109,12 @@
             <ul>
                 <li><strong>Local data:</strong> Cycle info, notes, vault, settings — stored on your device and your iCloud</li>
                 <li><strong>PRO subscription:</strong> Transactions processed by Apple. We do not collect payment information</li>
-                <li><strong>Bro AI (AI Chat):</strong> When you use the Bro AI feature, the following data is sent through our intermediary server (Cloudflare Worker) to <strong>Google Gemini</strong> (<a href="https://ai.google.dev" target="_blank">ai.google.dev</a>) — a third-party AI service from Google — for processing and generating responses:
+                <li><strong>Bro AI (AI Chat):</strong> When you use the Bro AI feature, the following data is sent through our intermediary server (Cloudflare Worker) to <strong>OpenRouter</strong> (<a href="https://openrouter.ai" target="_blank">openrouter.ai</a>) — a third-party AI routing service — which routes the request to Alibaba's <strong>Qwen</strong> model (<a href="https://qwen.alibaba.com" target="_blank">qwen.alibaba.com</a>) for processing and generating responses:
                     <ul>
                         <li>Your chat message content</li>
                         <li>Your current cycle phase (e.g. menstrual, ovulation)</li>
                     </ul>
-                    Data that is <strong>not</strong> sent: name, email, phone number, device ID, location. Google does not use this data to train its AI models per the Gemini API policy. We also do not store chats on our servers. Data is collected directly from you when you type a message in Bro AI.
+                    Data that is <strong>not</strong> sent: name, email, phone number, device ID, location. OpenRouter does not store message content by default (Zero Data Retention policy). We also do not store chats on our servers. Data is collected directly from you when you type a message in Bro AI.
                 </li>
                 <li><strong>Notifications:</strong> iOS local notifications only, no data sent externally</li>
                 <li><strong>Analytics:</strong> We do not use any third-party tracking tools</li>
@@ -123,20 +123,20 @@
             <h3><span class="num">2</span> How We Use Information</h3>
             <ul>
                 <li>Provide cycle forecasts and advice on your device</li>
-                <li>Process AI chat requests via Google Gemini</li>
+                <li>Process AI chat requests via OpenRouter (Alibaba's Qwen model)</li>
                 <li>Manage PRO subscriptions via Apple</li>
             </ul>
 
             <h3><span class="num">3</span> Data Sharing</h3>
-            <p>We <strong>do not sell or share</strong> your personal data. The only data transmitted externally is your chat message content and current cycle phase, sent to Google Gemini for processing.</p>
+            <p>We <strong>do not sell or share</strong> your personal data. The only data transmitted externally is your chat message content and current cycle phase, sent to OpenRouter (and Alibaba's Qwen model) for processing.</p>
             <p>Before using Bro AI for the first time, the app displays a dedicated consent screen that clearly identifies what data is sent and to whom. You must agree before any data is transmitted.</p>
-            <p>Google processes data in accordance with <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Gemini API Terms</a>. Data is transmitted via encrypted HTTPS connection.</p>
+            <p>OpenRouter processes data in accordance with <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter's Privacy Policy</a> and <a href="https://openrouter.ai/terms" target="_blank">Terms of Service</a>. Alibaba processes data in accordance with <a href="https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-statement" target="_blank">Alibaba Cloud's Privacy Policy</a>. Data is transmitted via encrypted HTTPS connection.</p>
 
             <h3><span class="num">4</span> Security</h3>
             <ul>
                 <li>Vault protected by Face ID/Touch ID</li>
                 <li>iCloud data encrypted by Apple</li>
-                <li>Google Gemini communication via HTTPS</li>
+                <li>OpenRouter communication via HTTPS</li>
             </ul>
 
             <h3><span class="num">5</span> Your Rights</h3>
